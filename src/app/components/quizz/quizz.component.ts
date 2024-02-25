@@ -45,12 +45,9 @@ export class QuizzComponent implements OnInit {
     }
   }
 
-  determineResult() {
+  async determineResult() {
     const counts: any = {};
-    var higher: number = 0;
     this.answers.forEach(x => {counts[x] = (counts[x] || 0) + 1} );
-    console.log(this.answers);
-    console.log(counts);
     if (counts['A']> counts['B']) {
       this.result = quizz_questions.results['A'];
     } else {
